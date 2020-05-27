@@ -93,6 +93,9 @@ class _HomePageState extends State<HomePage> {
     );
   }
   Widget _buildListView(MovieResponse data){
+    var size = MediaQuery.of(context).size;
+    final double itemHeight = (size.height - kToolbarHeight - 24) / 2;
+    final double itemWidth = size.width / 2;
     return  CustomScrollView(
       primary: false,
       slivers: <Widget>[
@@ -102,6 +105,7 @@ class _HomePageState extends State<HomePage> {
             crossAxisSpacing: 10,
             mainAxisSpacing: 10,
             crossAxisCount: 2,
+            childAspectRatio: (itemWidth / itemHeight),
             children: data.items.map((value) {
               return Container(
                 alignment: Alignment.center,
@@ -115,7 +119,7 @@ class _HomePageState extends State<HomePage> {
                     Expanded(
                         child: Padding(
                           padding: const EdgeInsets.all(4.0),
-                          child: Image.network(value.poster,width: MediaQuery.of(context).size.width,),
+                          child: Image.network(value.poster,),
                         )
                     ),
                     Padding(
