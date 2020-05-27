@@ -1,5 +1,4 @@
 import 'package:movieapp/model/movie_items_model.dart';
-
 class MovieResponse{
   List<MovieItem> _items;
   MovieResponse.fromJson(Map<String, dynamic> parsedJson) {

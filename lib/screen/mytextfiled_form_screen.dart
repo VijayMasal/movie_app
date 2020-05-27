@@ -1,6 +1,5 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-
 class MyTextFormField extends StatelessWidget {
   final TextEditingController controller ;
   final String hintText;
@@ -20,7 +19,6 @@ class MyTextFormField extends StatelessWidget {
     this.isPhone = false,
     this.isReadOnly = false
   });
-
   @override
   Widget build(BuildContext context) {
     return Padding(

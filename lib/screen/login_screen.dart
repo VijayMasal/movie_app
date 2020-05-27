@@ -5,22 +5,17 @@ import 'package:movieapp/model/login_model.dart';
 import 'package:movieapp/persistance/repository.dart';
 import 'package:movieapp/screen/alertDialog.dart';
 import 'package:movieapp/screen/loader_screen.dart';
-
-
 import 'mytextfiled_form_screen.dart';
-
 class LoginPage extends StatefulWidget {
   @override
   _LoginPageState createState() => _LoginPageState();
 }
-
 class _LoginPageState extends State<LoginPage> {
   final GlobalKey<State> _keyLoader = new GlobalKey<State>();
   final GlobalKey<State> _alertLoader = new GlobalKey<State>();
   final _loginformKey = GlobalKey<FormState>();
   final userNameTextField = TextEditingController();
   final passwordTextField = TextEditingController();
-
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -100,7 +95,6 @@ class _LoginPageState extends State<LoginPage> {
       ),
     );
   }
-
   Future<void> _handleSubmit(BuildContext context) async {
 
     if(userNameTextField.text == "" || userNameTextField.text == null){
@@ -108,7 +102,6 @@ class _LoginPageState extends State<LoginPage> {
           'Please enter user name as movie name.');
       return;
     }
-
     if(passwordTextField.text == "" || passwordTextField.text == null){
       print('Please enter password');
       AlertDialogs.showAlertDialog(context, _alertLoader,

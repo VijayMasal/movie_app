@@ -1,5 +1,4 @@
 
-
 class MovieItem {
   String _title;
   String _year;
@@ -11,7 +10,6 @@ class MovieItem {
     _year = parsedJson['Year'];
     _imdbID = parsedJson['imdbID'];
     _poster = parsedJson['Poster'];
-
   }
   String get title => _title;
   set title(String value) {
@@ -25,7 +23,6 @@ class MovieItem {
   set imdbID(String value) {
     _imdbID = value;
   }
-
   String get poster => _poster;
   set poster(String value) {
     _poster = value;
