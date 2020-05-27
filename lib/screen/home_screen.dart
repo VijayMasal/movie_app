@@ -15,16 +15,16 @@ class _HomePageState extends State<HomePage> {
       onWillPop: () => showDialog<bool>(
         context: context,
         builder: (c) => AlertDialog(
-          title: Text('Warning'),
-          content: Text('Do you really want to exit'),
+          title: Text('Warning',style: Theme.of(context).textTheme.bodyText1,),
+          content: Text('Do you really want to exit',style: Theme.of(context).textTheme.bodyText1,),
           actions: [
             FlatButton(
-              child: Text('Yes'),
+              child: Text('Yes', style: Theme.of(context).textTheme.headline3,),
               onPressed: () => Navigator.pop(c, true),
                 //onPressed: () => SystemChannels.platform.invokeMethod('SystemNavigator.pop')
             ),
             FlatButton(
-              child: Text('No'),
+              child: Text('No',style: Theme.of(context).textTheme.headline3,),
               onPressed: () => Navigator.pop(c, false),
             ),
           ],

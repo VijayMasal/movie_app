@@ -13,13 +13,13 @@ class AlertDialogs {
           content: new SingleChildScrollView(
             child: new ListBody(
               children: <Widget>[
-                new Text(msg ),
+                new Text(msg,style: Theme.of(context).textTheme.bodyText1, ),
               ],
             ),
           ),
           actions: <Widget>[
             new FlatButton(
-              child: new Text('Ok'),
+              child: new Text('Ok', style: Theme.of(context).textTheme.headline3,),
               onPressed: () {
                 Navigator.of(context).pop();
               },

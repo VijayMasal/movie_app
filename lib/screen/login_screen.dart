@@ -104,12 +104,15 @@ class _LoginPageState extends State<LoginPage> {
   Future<void> _handleSubmit(BuildContext context) async {
 
     if(userNameTextField.text == "" || userNameTextField.text == null){
-      print('Please enter user name');
+      AlertDialogs.showAlertDialog(context, _alertLoader,
+          'Please enter user name as movie name.');
       return;
     }
 
     if(passwordTextField.text == "" || passwordTextField.text == null){
       print('Please enter password');
+      AlertDialogs.showAlertDialog(context, _alertLoader,
+          'Please enter password as release year.');
       return;
     }
     try {
@@ -125,7 +128,7 @@ class _LoginPageState extends State<LoginPage> {
           Navigator.pushReplacementNamed(context, "Home");
         } else {
           AlertDialogs.showAlertDialog(context, _alertLoader,
-              'Please enter valid user name as movie name and password as release year');
+              'Please enter valid user name as movie name and password as release year.');
         }
       }else{
         AlertDialogs.showAlertDialog(context, _alertLoader,
