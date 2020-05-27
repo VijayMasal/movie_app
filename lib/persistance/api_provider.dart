@@ -19,7 +19,6 @@ class ApiProvider{
   Future<MovieResponse> fetchMovieItems(String searchItem) async {
     final _baseURL = "http://www.omdbapi.com/?apikey=2d1cd4c0&s=${searchItem}";
     final response = await client.get("$_baseURL");
-    print(response.body.toString());
     if (response.statusCode == 200) {
       return MovieResponse.fromJson(json.decode(response.body));
     } else {
